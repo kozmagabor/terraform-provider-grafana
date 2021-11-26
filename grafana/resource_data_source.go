@@ -29,7 +29,9 @@ source selected (via the 'type' argument).
 		UpdateContext: UpdateDataSource,
 		DeleteContext: DeleteDataSource,
 		ReadContext:   ReadDataSource,
-
+		Importer: &schema.ResourceImporter{
+			StateContext: schema.ImportStatePassthroughContext,
+		},
 		Schema: map[string]*schema.Schema{
 			"access_mode": {
 				Type:        schema.TypeString,
